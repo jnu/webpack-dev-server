@@ -44,6 +44,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -53,14 +61,6 @@ describe("static.directory option", () => {
     });
 
     it("should handle request to index route", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -77,14 +77,6 @@ describe("static.directory option", () => {
     });
 
     it("should handle request to other file", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/other.html`, {
         waitUntil: "networkidle0",
       });
@@ -162,6 +154,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -170,14 +170,6 @@ describe("static.directory option", () => {
     });
 
     it("should not list the files inside the assets folder (404)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/assets`, {
         waitUntil: "networkidle0",
       });
@@ -194,14 +186,6 @@ describe("static.directory option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/bar`, {
         waitUntil: "networkidle0",
       });
@@ -247,6 +231,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -255,14 +247,6 @@ describe("static.directory option", () => {
     });
 
     it("should list the files inside the assets folder (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/assets/`, {
         waitUntil: "networkidle0",
       });
@@ -282,14 +266,6 @@ describe("static.directory option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/bar/`, {
         waitUntil: "networkidle0",
       });
@@ -410,6 +386,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -418,14 +402,6 @@ describe("static.directory option", () => {
     });
 
     it("should handle request first directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -442,14 +418,6 @@ describe("static.directory option", () => {
     });
 
     it("should handle request to second directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo.html`, {
         waitUntil: "networkidle0",
       });
@@ -583,6 +551,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -591,14 +567,6 @@ describe("static.directory option", () => {
     });
 
     it("should handle request to /index.html", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/index.html`, {
         waitUntil: "networkidle0",
       });
@@ -644,6 +612,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -652,14 +628,6 @@ describe("static.directory option", () => {
     });
 
     it("should not handle request to /other.html (404)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/index.html`, {
         waitUntil: "networkidle0",
       });

@@ -37,6 +37,14 @@ describe("Module federation", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -45,14 +53,6 @@ describe("Module federation", () => {
     });
 
     it("should use the last entry export", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main.js`, {
         waitUntil: "networkidle0",
       });
@@ -95,6 +95,14 @@ describe("Module federation", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -103,14 +111,6 @@ describe("Module federation", () => {
     });
 
     it("should use the last entry export", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main.js`, {
         waitUntil: "networkidle0",
       });
@@ -135,14 +135,6 @@ describe("Module federation", () => {
     });
 
     it("should support the named entry export", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo.js`, {
         waitUntil: "networkidle0",
       });
@@ -185,6 +177,14 @@ describe("Module federation", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -193,14 +193,6 @@ describe("Module federation", () => {
     });
 
     it("should use the last entry export", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main.js`, {
         waitUntil: "networkidle0",
       });
@@ -243,6 +235,14 @@ describe("Module federation", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -251,14 +251,6 @@ describe("Module federation", () => {
     });
 
     it("should contain hot script in remoteEntry.js", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}/remoteEntry.js`,
         {
@@ -278,14 +270,6 @@ describe("Module federation", () => {
     });
 
     it("should contain hot script in main.js", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main.js`, {
         waitUntil: "networkidle0",
       });

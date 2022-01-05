@@ -38,6 +38,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -47,14 +55,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -109,6 +109,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -118,14 +126,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -180,6 +180,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -189,14 +197,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -257,6 +257,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -265,14 +273,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -332,6 +332,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -341,14 +349,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -404,6 +404,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -414,14 +422,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -485,6 +485,14 @@ describe("watchFiles option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -495,14 +503,6 @@ describe("watchFiles option", () => {
     });
 
     it("should reload when file content is changed", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/main`, {
         waitUntil: "networkidle0",
       });
@@ -627,6 +627,14 @@ describe("watchFiles option", () => {
 
           pageErrors = [];
           consoleMessages = [];
+
+          page
+            .on("console", (message) => {
+              consoleMessages.push(message);
+            })
+            .on("pageerror", (error) => {
+              pageErrors.push(error);
+            });
         });
 
         afterEach(async () => {
@@ -636,14 +644,6 @@ describe("watchFiles option", () => {
         });
 
         it("should reload when file content is changed", async () => {
-          page
-            .on("console", (message) => {
-              consoleMessages.push(message);
-            })
-            .on("pageerror", (error) => {
-              pageErrors.push(error);
-            });
-
           const response = await page.goto(`http://127.0.0.1:${port}/main`, {
             waitUntil: "networkidle0",
           });

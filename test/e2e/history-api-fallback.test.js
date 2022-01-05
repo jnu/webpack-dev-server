@@ -35,6 +35,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -43,14 +51,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("should handle GET request to directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
@@ -98,6 +98,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -106,14 +114,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("should handle GET request to directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
@@ -165,6 +165,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -173,14 +181,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("should handle GET request to directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
@@ -201,14 +201,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("should prefer static file over historyApiFallback", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}/random-file.txt`,
         {
@@ -260,6 +252,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -268,14 +268,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("historyApiFallback should work and ignore static content", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/index.html`, {
         waitUntil: "networkidle0",
       });
@@ -336,6 +328,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -344,14 +344,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("historyApiFallback respect rewrites for index", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -372,14 +364,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("historyApiFallback respect rewrites and shows index for unknown urls", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/acme`, {
         waitUntil: "networkidle0",
       });
@@ -400,14 +384,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("historyApiFallback respect any other specified rewrites", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/other`, {
         waitUntil: "networkidle0",
       });
@@ -459,6 +435,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -468,14 +452,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("request to directory and log", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
@@ -535,6 +511,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -544,14 +528,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("request to directory and log", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
@@ -609,6 +585,14 @@ describe("historyApiFallback option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -617,14 +601,6 @@ describe("historyApiFallback option", () => {
     });
 
     it("should take precedence over static files", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/foo`, {
         waitUntil: "networkidle0",
       });
