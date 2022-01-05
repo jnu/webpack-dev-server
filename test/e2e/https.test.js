@@ -56,6 +56,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -65,14 +73,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -137,6 +137,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -147,14 +155,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -223,6 +223,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -233,14 +241,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -305,6 +305,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -315,14 +323,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -398,6 +398,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -408,14 +416,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -470,6 +470,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -480,14 +488,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -542,6 +542,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -552,14 +560,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -618,6 +618,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -628,14 +636,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -695,6 +695,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -706,14 +714,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -780,6 +780,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -790,14 +798,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -866,6 +866,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -876,14 +884,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
@@ -1036,6 +1036,14 @@ describe("https option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -1046,14 +1054,6 @@ describe("https option", () => {
     });
 
     it("should handle GET request to index route (/)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`https://127.0.0.1:${port}/`, {
         waitUntil: "networkidle0",
       });
