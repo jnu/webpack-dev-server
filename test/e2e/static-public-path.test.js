@@ -43,6 +43,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -51,14 +59,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to index", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/`,
         {
@@ -78,14 +78,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to other file", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/other.html`,
         {
@@ -135,6 +127,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -143,14 +143,6 @@ describe("static.publicPath option", () => {
     });
 
     it("shouldn't list the files inside the assets folder (404)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/assets`,
         {
@@ -170,14 +162,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/bar`,
         {
@@ -227,6 +211,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -235,14 +227,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should list the files inside the assets folder (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/assets`,
         {
@@ -262,14 +246,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/bar`,
         {
@@ -319,6 +295,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -327,14 +311,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should list the files inside the assets folder (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/assets`,
         {
@@ -354,14 +330,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/bar`,
         {
@@ -415,6 +383,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -423,14 +399,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to first directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/`,
         {
@@ -450,14 +418,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to second directory", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/foo.html`,
         {
@@ -509,6 +469,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -518,14 +486,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to page", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/index.html`,
         {
@@ -573,6 +533,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -581,14 +549,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to example.txt", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/assets/example.txt`,
         {
@@ -857,6 +817,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -865,14 +833,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the index of first path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/`,
         {
@@ -892,14 +852,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the other file of first path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/other.html`,
         {
@@ -919,14 +871,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the /foo route of second path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${otherStaticPublicPath}/foo.html`,
         {
@@ -982,6 +926,14 @@ describe("static.publicPath option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -990,14 +942,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the index of first path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/`,
         {
@@ -1017,14 +961,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the other file of first path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/other.html`,
         {
@@ -1044,14 +980,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the /foo route of first path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${staticPublicPath}/foo.html`,
         {
@@ -1071,14 +999,6 @@ describe("static.publicPath option", () => {
     });
 
     it("should handle request to the /foo route of second path", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(
         `http://127.0.0.1:${port}${otherStaticPublicPath}/foo.html`,
         {
