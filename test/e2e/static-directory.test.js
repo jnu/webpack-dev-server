@@ -334,6 +334,14 @@ describe("static.directory option", () => {
 
       pageErrors = [];
       consoleMessages = [];
+
+      page
+        .on("console", (message) => {
+          consoleMessages.push(message);
+        })
+        .on("pageerror", (error) => {
+          pageErrors.push(error);
+        });
     });
 
     afterEach(async () => {
@@ -342,14 +350,6 @@ describe("static.directory option", () => {
     });
 
     it("should list the files inside the assets folder (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/assets`, {
         waitUntil: "networkidle0",
       });
@@ -369,14 +369,6 @@ describe("static.directory option", () => {
     });
 
     it("should show Heyo. because bar has index.html inside it (200)", async () => {
-      page
-        .on("console", (message) => {
-          consoleMessages.push(message);
-        })
-        .on("pageerror", (error) => {
-          pageErrors.push(error);
-        });
-
       const response = await page.goto(`http://127.0.0.1:${port}/bar`, {
         waitUntil: "networkidle0",
       });
